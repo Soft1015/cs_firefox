@@ -1,0 +1,72 @@
+-------------------------------------------------------------------------------------------------------------------------------------
+
+1. When started, the load the page in a new tab.
+
+
+2. Read and memorize item ID of items 1 through 8 onto "LIST A", and items 9 and 10 onto "LIST B"
+
+
+3. Wait X seconds and refresh.
+   After refreshing, compare the list of the first 8 items on the page to "LIST A":
+   
+      a) If lists are equal, continue refreshing (back to stage 3.)
+   OR
+      b) If lists are NOT equal, then:
+
+
+           4. Determine what is the first different item that is not contained in "LIST A" 
+              Then check if this item is equal to any item on "LIST B":
+                 
+                   a) If not, then immediately focus on tab + play alert sound + restart the script in a new tab (back to stage 1.)
+                OR
+                   b) If yes, then re-memorize both lists from scratch (back to stage 2.)
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Based on this logic, whenever new items are added, the script should behave in the following ways:
+
+Case 1) When any item disappears from the first 8 items and therefore any of the older items are pushed back in line,
+        the script will overwrite lists A and B from scratch, and continue refreshing as it would normally
+
+Case 2) When any new item, that is different from those contained in lists A and B, appears anywhere in the first 8 items,
+        the script will focus on current tab, play alert sound and restart the script in a new tab
+
+Case 3) When any new item appears and another existing item disappears on the same refresh, the script will always trigger Case 2 
+        because it will always detect the new item first, since any old item will always be in the later position 
+        relative to the new item because it is pushed in from the back
+
+
+REFRESH:
+
+extension must have custom refresh rate setting, making the script wait X seconds before refreshing again
+
+ideally the script should refresh the items on the page by "clicking" on "1" at the bottom of the page (preferably without having to scroll down)
+otherwise the "Extraordinary" button at the bottom of the filter tab to the left may be used to do the same
+
+the countdown to next refresh must start after the baron logo "Updating Offers" disappears and the updated items have been read and compared
+
+if there is a better way to trigger a refresh, let me know
+
+
+ERRORS:
+
+sometimes the page gets stuck loading
+sometimes the page shows gateway error
+sometimes any open tab will automatically change to https://skinbaron.de/en/maintenance and display a maintenance message
+
+in any case of slowdown or any error or failing to load results, the script should wait for 10 seconds
+before reloading the whole page and attempting to continue working
+if this timeout happens 5 times in a row, stop the script
+
+
+OTHER:
+
+extension must have custom link setting that I can set
+extension must have start and stop buttons for running the script
+script should reset whenever I close Firefox, and must always be started manually
+
+script must be fast, clean and efficient, it's very important that it does it's job as fast and efficiently as possible
+
+if you have any questions or suggestions let me know

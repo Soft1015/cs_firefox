@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assets/css/choose_beast.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h3>This is CS Extension</h3>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default ">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a
+                data-toggle="collapse"
+                data-parent="#accordion"
+                href="#collapse1"
+                >Time setting</a
+              >
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <button
+                type="button"
+                class="btn btn-success margin-bottom"
+                id="timeSave"
+              >
+                Save
+              </button>
+              <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="number" class="form-control" id="time" min="3" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a
+                data-toggle="collapse"
+                data-parent="#accordion"
+                href="#collapse2"
+                >Url Setting</a
+              >
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table">
+                <button type="button" class="btn btn-primary" id="addRowUrl">
+                  Add
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success margin-left"
+                  id="urlSave"
+                >
+                  Save
+                </button>
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Url</th>
+                    <th>Activated</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_url"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="cotainer text-center">
+          <button class="button-33" role="button" id="btn-start">Start</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/cs.js"></script>
+  </body>
+</html>
